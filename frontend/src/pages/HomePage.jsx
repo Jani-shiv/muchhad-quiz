@@ -64,6 +64,16 @@ export function HomePage({ lang, setLang }) {
         <TopBarControls lang={lang} setLang={setLang} />
       </header>
 
+      {/* Mascot Character - Floating on upper right */}
+      <div className="hidden md:block fixed top-24 right-8 z-20 pointer-events-none">
+        <img 
+          src="/logo.png" 
+          alt="Muchhad-Quiz Mascot" 
+          className="w-48 h-48 md:w-56 md:h-56 invert drop-shadow-[6px_6px_0px_#000] animate-bounce-slow" 
+          style={{ transform: 'rotate(-5deg)' }}
+        />
+      </div>
+
       <main className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start my-auto">
         {/* Player Join Card */}
         <section className="neo-card bg-neo-cyan p-6 md:p-8">
