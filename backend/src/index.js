@@ -15,8 +15,16 @@ import quizRoutes from './routes/quizzes.js';
 import sessionRoutes from './routes/sessions.js';
 import { registerSocketHandlers } from './socket/handlers.js';
 import { startBatchTicker } from './services/gameEngine.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
+
+// Serve frontend static files
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 const server = http.createServer(app);
 
 app.set('trust proxy', 1);
@@ -47,6 +55,14 @@ app.get('/api/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/quizzes', quizRoutes);
 app.use('/api/sessions', sessionRoutes);
+
+// SPA fallback - serve index.html for all non-API routes
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) {
+    return next();
+  }
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+});
 
 const io = new Server(server, {
   cors: {
