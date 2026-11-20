@@ -55,7 +55,7 @@ export function HomePage({ lang, setLang }) {
               <img 
                 src="/logo.png" 
                 alt="Muchhad-Quiz" 
-                className="w-7 h-7 md:w-8 md:h-8 invert" 
+                className="w-7 h-7 md:w-8 md:h-8" 
               />
               {t('appTitle')}
             </span>
@@ -69,7 +69,7 @@ export function HomePage({ lang, setLang }) {
         <img 
           src="/logo.png" 
           alt="Muchhad-Quiz Mascot" 
-          className="w-48 h-48 md:w-56 md:h-56 invert drop-shadow-[6px_6px_0px_#000] animate-bounce-slow" 
+          className="w-48 h-48 md:w-56 md:h-56 drop-shadow-[6px_6px_0px_#000] animate-bounce-slow" 
           style={{ transform: 'rotate(-5deg)' }}
         />
       </div>
