@@ -1,6 +1,6 @@
 export const TRANSLATIONS = {
   en: {
-    appTitle: 'QUIZBLITZ',
+    appTitle: 'Muchhad-Quiz',
     joinGame: 'JOIN GAME',
     hostLogin: 'HOST STUDIO',
     enterPin: '6-DIGIT GAME PIN',
@@ -28,7 +28,7 @@ export const TRANSLATIONS = {
     podiumTitle: 'FINAL PODIUM',
   },
   hi: {
-    appTitle: 'क्विज़ब्लिट्ज़',
+    appTitle: 'मचहद-क्विज़',
     joinGame: 'गेम में जुड़ें',
     hostLogin: 'होस्ट स्टूडियो',
     enterPin: '6-अंकीय गेम पिन',
@@ -56,7 +56,7 @@ export const TRANSLATIONS = {
     podiumTitle: 'अंतिम विजेता',
   },
   gu: {
-    appTitle: 'ક્વિઝબ્લિટ્ઝ',
+    appTitle: 'મચ્હાદ-क્વિઝ',
     joinGame: 'ગેમમાં જોડાઓ',
     hostLogin: 'હોસ્ટ સ્ટુડિયો',
     enterPin: '6-અંકનો ગેમ પિન',
