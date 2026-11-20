@@ -27,7 +27,7 @@ services:
       - key: REDIS_URL
         fromRedis:
           name: quizblitz-redis
-          property: connectionString
+          property: url
 
 databases:
   - name: quizblitz-db
