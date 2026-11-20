@@ -1,4 +1,5 @@
 services:
+  # PostgreSQL database
   - type: web
     name: quizblitz
     runtime: docker
@@ -6,7 +7,6 @@ services:
     dockerContext: .
     plan: free
     region: oregon
-    port: 4000
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
@@ -30,7 +30,7 @@ services:
           type: keyvalue
           property: connectionString
 
-  # Redis = Key Value service (NOT a database)
+  # Redis = Key Value service
   - type: keyvalue
     name: quizblitz-redis
     plan: free
@@ -40,7 +40,7 @@ services:
         description: everywhere
 
 databases:
-  # Only PostgreSQL goes here
+  # Only PostgreSQL
   - name: quizblitz-db
     plan: free
     databaseName: quizblitz
