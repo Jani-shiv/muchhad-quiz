@@ -21,7 +21,8 @@ import fs from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const frontendDist = path.join(__dirname, '../frontend/dist');
+// Dockerfile copies frontend dist to /app/frontend/dist (from /app/backend WORKDIR)
+const frontendDist = path.join(__dirname, '../../frontend/dist');
 
 console.log('[DEBUG] __dirname:', __dirname);
 console.log('[DEBUG] frontendDist:', frontendDist);
