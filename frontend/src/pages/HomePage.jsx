@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Zap, Monitor, UserCheck, Github, Linkedin } from 'lucide-react';
+import { Monitor, UserCheck, Github, Linkedin } from 'lucide-react';
 import { apiFetch, setHostToken } from '../utils/api';
 import { useT } from '../i18n/translations';
 import { TopBarControls } from '../components/TopBarControls';
@@ -52,7 +52,11 @@ export function HomePage({ lang, setLang }) {
         <div className="flex items-center gap-3">
           <div className="bg-neo-yellow border-4 border-black shadow-neo-sm px-4 py-2 sticker-tilt-left">
             <span className="font-display text-2xl md:text-3xl tracking-tight flex items-center gap-2">
-              <Zap className="w-7 h-7 fill-black" />
+              <img 
+                src="/logo.png" 
+                alt="Muchhad-Quiz" 
+                className="w-7 h-7 md:w-8 md:h-8 invert" 
+              />
               {t('appTitle')}
             </span>
           </div>
