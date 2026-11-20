@@ -25,18 +25,24 @@ services:
           name: quizblitz-db
           property: connectionString
       - key: REDIS_URL
-        fromRedis:
+        fromService:
           name: quizblitz-redis
-          property: url
+          type: keyvalue
+          property: connectionString
+
+  # Redis = Key Value service (NOT a database)
+  - type: keyvalue
+    name: quizblitz-redis
+    plan: free
+    region: oregon
+    ipAllowList:
+      - source: 0.0.0.0/0
+        description: everywhere
 
 databases:
+  # Only PostgreSQL goes here
   - name: quizblitz-db
     plan: free
     databaseName: quizblitz
     user: quizblitz
     region: oregon
-
-  - name: quizblitz-redis
-    plan: free
-    region: oregon
-    version: 7
