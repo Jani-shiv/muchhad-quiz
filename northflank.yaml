@@ -1,4 +1,4 @@
-project: quizblitz
+project: muchhad-quiz
 services:
   - name: app
     type: web

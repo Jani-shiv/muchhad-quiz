@@ -3,15 +3,15 @@ services:
     image: postgres:16-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_USER: quizblitz
-      POSTGRES_PASSWORD: quizblitz_secret
-      POSTGRES_DB: quizblitz
+      POSTGRES_USER: muchhadquiz
+      POSTGRES_PASSWORD: muchhadquiz_secret
+      POSTGRES_DB: muchhadquiz
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U quizblitz"]
+      test: ["CMD-SHELL", "pg_isready -U muchhadquiz"]
       interval: 5s
       timeout: 3s
       retries: 5
@@ -38,7 +38,7 @@ services:
     environment:
       NODE_ENV: production
       PORT: 4000
-      DATABASE_URL: postgres://quizblitz:quizblitz_secret@postgres:5432/quizblitz
+      DATABASE_URL: postgres://muchhadquiz:muchhadquiz_secret@postgres:5432/muchhadquiz
       REDIS_URL: redis://redis:6379
       JWT_SECRET: ${JWT_SECRET:-dev_secret_change_me_in_production_64chars}
       JWT_EXPIRES_IN: 12h

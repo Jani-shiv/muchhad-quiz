@@ -195,7 +195,7 @@ export function HostDashboard({ lang, setLang }) {
 
   const exportSessionCSV = async (session) => {
     const data = await apiFetch(`/api/sessions/${session.id}/results`);
-    downloadCSV(`quizblitz-${session.pin}.csv`, data.results || []);
+    downloadCSV(`muchhad-quiz-${session.pin}.csv`, data.results || []);
   };
 
   const exportSessionPDF = async (session) => {

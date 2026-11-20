@@ -96,7 +96,7 @@ startBatchTicker(io);
 async function bootstrap() {
   await runMigrations();
   server.listen(env.port, '0.0.0.0', () => {
-    console.log(`[Server] QuizBlitz listening on port ${env.port} (${env.nodeEnv})`);
+    console.log(`[Server] muchhad-quiz listening on port ${env.port} (${env.nodeEnv})`);
   });
 }
 

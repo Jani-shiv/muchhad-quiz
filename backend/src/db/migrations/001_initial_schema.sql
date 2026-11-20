@@ -1,4 +1,4 @@
--- QuizBlitz Initial PostgreSQL Schema
+-- muchhad-quiz Initial PostgreSQL Schema
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 CREATE TABLE IF NOT EXISTS users (

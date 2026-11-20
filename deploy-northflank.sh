@@ -1,12 +1,12 @@
 #!/bin/bash
-# Deploy QuizBlitz to Northflank (free tier)
+# Deploy muchhad-quiz to Northflank (free tier)
 
 set -e
 
 GITHUB_USERNAME=""
-REPO_NAME="quizblitz"
+REPO_NAME="Live-quiz"
 
-echo "=== QuizBlitz Northflank Deployment Helper ==="
+echo "=== muchhad-quiz Northflank Deployment Helper ==="
 echo ""
 
 # Check if git is initialized
@@ -14,7 +14,7 @@ if [ ! -d ".git" ]; then
     echo "Initializing Git repository..."
     git init
     git add .
-    git commit -m "QuizBlitz ready for Northflank"
+    git commit -m "muchhad-quiz ready for Northflank"
     git branch -M main
 else
     echo "Git repository already initialized"

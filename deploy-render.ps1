@@ -1,6 +1,6 @@
 <# 
 .SYNOPSIS
-    Deploy QuizBlitz to Render (free tier, no credit card)
+    Deploy muchhad-quiz to Render (free tier, no credit card)
 .DESCRIPTION
     Pushes to GitHub and provides Render setup instructions
 #>
@@ -10,7 +10,7 @@ param(
     [string]$RepoName = "Live-quiz"
 )
 
-Write-Host "=== QuizBlitz Render Deployment Helper ===" -ForegroundColor Cyan
+Write-Host "=== muchhad-quiz Render Deployment Helper ===" -ForegroundColor Cyan
 Write-Host ""
 
 # Check git status
@@ -18,7 +18,7 @@ if (-not (Test-Path ".git")) {
     Write-Host "Initializing Git repository..." -ForegroundColor Yellow
     git init
     git add .
-    git commit -m "QuizBlitz ready for Render"
+    git commit -m "muchhad-quiz ready for Render"
     git branch -M main
 } else {
     Write-Host "Git repository already initialized" -ForegroundColor Green

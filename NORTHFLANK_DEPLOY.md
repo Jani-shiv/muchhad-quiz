@@ -9,12 +9,12 @@
 ## Step 1: Push to GitHub
 
 ```bash
-cd quizblitz
+cd muchhad-quiz
 git init
 git add .
-git commit -m "QuizBlitz ready for Northflank"
+git commit -m "muchhad-quiz ready for Northflank"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/quizblitz.git
+git remote add origin https://github.com/YOUR_USERNAME/Live-quiz.git
 git push -u origin main
 ```
 
@@ -24,8 +24,8 @@ git push -u origin main
 
 1. Go to [app.northflank.com](https://app.northflank.com)
 2. Click **"New Project"**
-3. Name: `quizblitz`
-4. Select **GitHub** → Choose your `quizblitz` repo
+3. Name: `muchhad-quiz`
+4. Select **GitHub** → Choose your `Live-quiz` repo
 5. Click **"Create Project"**
 
 ---
@@ -83,7 +83,7 @@ Go to **Services** → **app** → **Environment** → **Secrets**, add:
 
 After deploy succeeds:
 1. Go to **Services** → **app** → **Overview**
-2. Copy the **Service URL** (e.g., `https://quizblitz-abc123.northflank.app`)
+2. Copy the **Service URL** (e.g., `https://muchhad-quiz-abc123.northflank.app`)
 
 **Update the `public-host` secret** with this URL.
 
@@ -161,7 +161,7 @@ docker compose up --build -d
 
 ## Done! 🎉
 
-Your QuizBlitz is now live at `https://your-app.northflank.app` with:
+Your muchhad-quiz is now live at `https://your-app.northflank.app` with:
 - ✅ PostgreSQL database (free)
 - ✅ Redis for WebSocket scaling (free)
 - ✅ HTTPS & custom domain support

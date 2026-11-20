@@ -1,7 +1,7 @@
 services:
   # PostgreSQL database
   - type: web
-    name: quizblitz
+    name: muchhad-quiz
     runtime: docker
     dockerfilePath: ./Dockerfile
     dockerContext: .
@@ -17,22 +17,22 @@ services:
         generateValue: true
       - key: PUBLIC_HOST
         fromService:
-          name: quizblitz
+          name: muchhad-quiz
           type: web
           property: host
       - key: DATABASE_URL
         fromDatabase:
-          name: quizblitz-db
+          name: muchhad-quiz-db
           property: connectionString
       - key: REDIS_URL
         fromService:
-          name: quizblitz-redis
+          name: muchhad-quiz-redis
           type: keyvalue
           property: connectionString
 
   # Redis = Key Value service
   - type: keyvalue
-    name: quizblitz-redis
+    name: muchhad-quiz-redis
     plan: free
     region: oregon
     ipAllowList:
@@ -41,8 +41,8 @@ services:
 
 databases:
   # Only PostgreSQL
-  - name: quizblitz-db
+  - name: muchhad-quiz-db
     plan: free
-    databaseName: quizblitz
-    user: quizblitz
+    databaseName: muchhadquiz
+    user: muchhadquiz
     region: oregon

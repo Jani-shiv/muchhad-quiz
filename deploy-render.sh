@@ -1,12 +1,12 @@
 #!/bin/bash
-# Deploy QuizBlitz to Render (free tier, no credit card)
+# Deploy muchhad-quiz to Render (free tier, no credit card)
 
 set -e
 
 GITHUB_USERNAME="Jani-shiv"
 REPO_NAME="Live-quiz"
 
-echo "=== QuizBlitz Render Deployment Helper ==="
+echo "=== muchhad-quiz Render Deployment Helper ==="
 echo ""
 
 # Check git status
@@ -14,7 +14,7 @@ if [ ! -d ".git" ]; then
     echo "Initializing Git repository..."
     git init
     git add .
-    git commit -m "QuizBlitz ready for Render"
+    git commit -m "muchhad-quiz ready for Render"
     git branch -M main
 else
     echo "Git repository already initialized"

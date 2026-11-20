@@ -1,5 +1,5 @@
 {
-  "name": "quizblitz-backend",
+  "name": "muchhad-quiz-backend",
   "version": "1.0.0",
   "type": "module",
   "main": "src/index.js",

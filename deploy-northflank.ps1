@@ -1,16 +1,16 @@
 <# 
 .SYNOPSIS
-    Deploy QuizBlitz to Northflank (free tier)
+    Deploy muchhad-quiz to Northflank (free tier)
 .DESCRIPTION
     Helps push to GitHub and provides Northflank setup instructions
 #>
 
 param(
     [string]$GitHubUsername = "",
-    [string]$RepoName = "quizblitz"
+    [string]$RepoName = "Live-quiz"
 )
 
-Write-Host "=== QuizBlitz Northflank Deployment Helper ===" -ForegroundColor Cyan
+Write-Host "=== muchhad-quiz Northflank Deployment Helper ===" -ForegroundColor Cyan
 Write-Host ""
 
 # Check if git is initialized
@@ -18,7 +18,7 @@ if (-not (Test-Path ".git")) {
     Write-Host "Initializing Git repository..." -ForegroundColor Yellow
     git init
     git add .
-    git commit -m "QuizBlitz ready for Northflank"
+    git commit -m "muchhad-quiz ready for Northflank"
     git branch -M main
 } else {
     Write-Host "Git repository already initialized" -ForegroundColor Green

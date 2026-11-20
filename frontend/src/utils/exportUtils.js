@@ -36,7 +36,7 @@ export function printSessionPDF(session, results) {
     <!doctype html>
     <html>
     <head>
-      <title>QuizBlitz Report - ${session.quiz_title}</title>
+      <title>muchhad-quiz Report - ${session.quiz_title}</title>
       <style>
         body { font-family: monospace; padding: 32px; background: #FFF8E7; color: #000; }
         h1 { border: 4px solid #000; background: #FFE500; padding: 12px 16px; box-shadow: 6px 6px 0 #000; }
@@ -46,7 +46,7 @@ export function printSessionPDF(session, results) {
       </style>
     </head>
     <body>
-      <h1>QUIZBLITZ SESSION REPORT: ${session.quiz_title}</h1>
+      <h1>MUCHHAD-QUIZ SESSION REPORT: ${session.quiz_title}</h1>
       <p><strong>PIN:</strong> ${session.pin} | <strong>Players:</strong> ${results.length} | <strong>Date:</strong> ${new Date(session.created_at).toLocaleString()}</p>
       <table>
         <thead>
@@ -89,7 +89,7 @@ export function downloadResultCardPNG({ nickname, rank, totalPlayers, score, cor
 
   ctx.fillStyle = '#000000';
   ctx.font = 'bold 34px sans-serif';
-  ctx.fillText('QUIZBLITZ // RESULT CARD', 68, 90);
+  ctx.fillText('MUCHHAD-QUIZ // RESULT CARD', 68, 90);
 
   ctx.font = 'bold 24px monospace';
   ctx.fillText(String(quizTitle || 'LIVE QUIZ').slice(0, 42), 68, 160);
@@ -130,7 +130,7 @@ export function downloadResultCardPNG({ nickname, rank, totalPlayers, score, cor
   ctx.fillText(`${correctCount}/${totalQuestions}`, 618, 368);
 
   const link = document.createElement('a');
-  link.download = `quizblitz-${nickname}-rank${rank}.png`;
+  link.download = `muchhad-quiz-${nickname}-rank${rank}.png`;
   link.href = canvas.toDataURL('image/png');
   link.click();
 }

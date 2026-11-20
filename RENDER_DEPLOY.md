@@ -13,7 +13,7 @@
 3. **New** → **Blueprint** → Connect `Live-quiz` repo
 4. Render detects `render.yaml` → **"Apply"**
 5. Creates: Web Service + PostgreSQL + Redis automatically
-6. **Deploy** → Live at `https://quizblitz-xxxx.onrender.com`
+6. **Deploy** → Live at `https://muchhad-quiz-xxxx.onrender.com`
 
 ---
 
@@ -25,7 +25,7 @@
 2. **Connect** GitHub → Select `Live-quiz`
 3. **Settings:**
    ```
-   Name: quizblitz
+   Name: muchhad-quiz
    Region: Oregon (US West)
    Branch: main
    Runtime: Docker
@@ -45,16 +45,16 @@ In **Environment** tab, add:
 | `NODE_ENV` | `production` |
 | `CORS_ORIGIN` | `*` |
 | `JWT_SECRET` | Click **"Generate"** (or run `openssl rand -hex 32`) |
-| `PUBLIC_HOST` | `quizblitz-xxxx.onrender.com` (fill after deploy) |
+| `PUBLIC_HOST` | `muchhad-quiz-xxxx.onrender.com` (fill after deploy) |
 
 ### 3. Create PostgreSQL Database (Free 90 days)
 
 1. **Dashboard** → **New** → **PostgreSQL**
 2. **Settings:**
    ```
-   Name: quizblitz-db
-   Database: quizblitz
-   User: quizblitz
+   Name: muchhad-quiz-db
+   Database: muchhadquiz
+   User: muchhadquiz
    Region: Oregon
    Plan: Free
    ```
@@ -66,7 +66,7 @@ In **Environment** tab, add:
 1. **Dashboard** → **New** → **Redis**
 2. **Settings:**
    ```
-   Name: quizblitz-redis
+   Name: muchhad-quiz-redis
    Region: Oregon
    Plan: Free
    Version: 7
@@ -86,7 +86,7 @@ In **Environment** tab, add:
 
 ### 6. Update PUBLIC_HOST
 
-1. After deploy: **Web Service** → **Settings** → Copy **URL** (e.g., `https://quizblitz-abc123.onrender.com`)
+1. After deploy: **Web Service** → **Settings** → Copy **URL** (e.g., `https://muchhad-quiz-abc123.onrender.com`)
 2. **Environment** → Edit `PUBLIC_HOST` → Paste URL
 3. **Save** → Redeploys with correct join URLs
 
