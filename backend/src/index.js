@@ -17,14 +17,23 @@ import { registerSocketHandlers } from './socket/handlers.js';
 import { startBatchTicker } from './services/gameEngine.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const frontendDist = path.join(__dirname, '../frontend/dist');
+
+console.log('[DEBUG] __dirname:', __dirname);
+console.log('[DEBUG] frontendDist:', frontendDist);
+console.log('[DEBUG] dist exists:', fs.existsSync(frontendDist));
+if (fs.existsSync(frontendDist)) {
+  console.log('[DEBUG] dist contents:', fs.readdirSync(frontendDist));
+}
 
 const app = express();
 
 // Serve frontend static files
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.use(express.static(frontendDist));
 const server = http.createServer(app);
 
 app.set('trust proxy', 1);
@@ -61,7 +70,7 @@ app.get('*', (req, res, next) => {
   if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) {
     return next();
   }
-  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+  res.sendFile(path.join(frontendDist, 'index.html'));
 });
 
 const io = new Server(server, {
