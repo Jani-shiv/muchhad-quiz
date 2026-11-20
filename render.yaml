@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: quizblitz
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    region: oregon
+    port: 4000
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGIN
+        value: "*"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PUBLIC_HOST
+        fromService:
+          name: quizblitz
+          type: web
+          property: host
+    # Database and Redis will be linked below
+
+databases:
+  - name: quizblitz-db
+    plan: free
+    databaseName: quizblitz
+    user: quizblitz
+    region: oregon
+
+  - name: quizblitz-redis
+    plan: free
+    region: oregon
+    version: 7
+
+# Link environment variables after creation
+# RENDER will auto-populate DATABASE_URL and REDIS_URL when linked
