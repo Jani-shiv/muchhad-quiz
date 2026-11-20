@@ -1,0 +1,27 @@
+project: quizblitz
+services:
+  - name: app
+    type: web
+    dockerfilePath: Dockerfile
+    port: 4000
+    env:
+      - name: NODE_ENV
+        value: production
+      - name: CORS_ORIGIN
+        value: "*"
+      - name: PUBLIC_HOST
+        valueFrom: secret:public-host
+      - name: JWT_SECRET
+        valueFrom: secret:jwt-secret
+    resources:
+      cpu: 0.5
+      memory: 1024
+    replicas: 1
+
+addons:
+  - name: postgres
+    type: postgresql
+    plan: free
+  - name: redis
+    type: redis
+    plan: free
