@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Zap, Monitor, UserCheck } from 'lucide-react';
+import { Zap, Monitor, UserCheck, Github, Linkedin } from 'lucide-react';
 import { apiFetch, setHostToken } from '../utils/api';
 import { useT } from '../i18n/translations';
 import { TopBarControls } from '../components/TopBarControls';
@@ -179,8 +179,32 @@ export function HomePage({ lang, setLang }) {
         </section>
       </main>
 
-      <footer className="mt-8 text-center font-mono text-xs font-bold opacity-75">
-        BUILT FOR 150+ CONCURRENT PLAYERS • SERVER-AUTHORITATIVE • NEO-BRUTALIST EDITION
+      <footer className="mt-8 pb-4">
+        <p className="font-mono text-xs font-bold opacity-75 text-center mb-3">
+          BUILT FOR 150+ CONCURRENT PLAYERS • SERVER-AUTHORITATIVE • NEO-BRUTALIST EDITION
+        </p>
+        <div className="flex justify-center gap-4">
+          <a
+            href="https://github.com/Jani-shiv"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="neo-btn bg-white px-4 py-2 flex items-center gap-2 text-xs font-mono font-bold hover:bg-neo-yellow transition-colors"
+            aria-label="GitHub - Shiv Jani"
+          >
+            <Github className="w-4 h-4 fill-black" />
+            <span>GITHUB</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/shiv-jani/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="neo-btn bg-white px-4 py-2 flex items-center gap-2 text-xs font-mono font-bold hover:bg-neo-cyan transition-colors"
+            aria-label="LinkedIn - Shiv Jani"
+          >
+            <Linkedin className="w-4 h-4 fill-black" />
+            <span>LINKEDIN</span>
+          </a>
+        </div>
       </footer>
     </div>
   );
