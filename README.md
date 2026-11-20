@@ -1,4 +1,4 @@
-# muchhad-quiz — Live Neo-Brutalist Quiz Platform
+# Muchhad-Quiz — Live Neo-Brutalist Quiz Platform
 
 A production-ready Kahoot-style live quiz platform built with **React + Vite + Tailwind CSS + Framer Motion**, **Node.js + Express + Socket.IO**, **Redis (state + Socket.IO Redis Adapter)**, and **PostgreSQL**.
 
@@ -16,7 +16,7 @@ A production-ready Kahoot-style live quiz platform built with **React + Vite + T
 ## 📁 Project Structure
 
 ```
-muchhad-quiz/
+Muchhad-Quiz/
 ├── .env.example                 # Environment template
 ├── ARCHITECTURE.md              # Architecture, Socket.IO events, edge cases
 ├── Dockerfile                   # Multi-stage Docker build

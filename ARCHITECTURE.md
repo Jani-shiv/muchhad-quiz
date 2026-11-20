@@ -1,4 +1,4 @@
-# muchhad-quiz — System Architecture & Socket.IO Event Contract
+# Muchhad-Quiz — System Architecture & Socket.IO Event Contract
 
 ## 1. High-Level Architecture
 

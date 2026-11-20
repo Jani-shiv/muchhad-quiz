@@ -36,7 +36,7 @@ export function printSessionPDF(session, results) {
     <!doctype html>
     <html>
     <head>
-      <title>muchhad-quiz Report - ${session.quiz_title}</title>
+      <title>Muchhad-Quiz Report - ${session.quiz_title}</title>
       <style>
         body { font-family: monospace; padding: 32px; background: #FFF8E7; color: #000; }
         h1 { border: 4px solid #000; background: #FFE500; padding: 12px 16px; box-shadow: 6px 6px 0 #000; }
@@ -130,7 +130,7 @@ export function downloadResultCardPNG({ nickname, rank, totalPlayers, score, cor
   ctx.fillText(`${correctCount}/${totalQuestions}`, 618, 368);
 
   const link = document.createElement('a');
-  link.download = `muchhad-quiz-${nickname}-rank${rank}.png`;
+  link.download = `Muchhad-Quiz-${nickname}-rank${rank}.png`;
   link.href = canvas.toDataURL('image/png');
   link.click();
 }

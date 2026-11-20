@@ -10,7 +10,7 @@
 
 1. **Go to:** https://dashboard.render.com
 2. **Sign up** with GitHub
-3. **New** → **Blueprint** → Connect `Live-quiz` repo
+3. **New** → **Blueprint** → Connect `Muchhad-Quiz` repo
 4. Render detects `render.yaml` → **"Apply"**
 5. Creates: Web Service + PostgreSQL + Redis automatically
 6. **Deploy** → Live at `https://muchhad-quiz-xxxx.onrender.com`
@@ -45,7 +45,7 @@ In **Environment** tab, add:
 | `NODE_ENV` | `production` |
 | `CORS_ORIGIN` | `*` |
 | `JWT_SECRET` | Click **"Generate"** (or run `openssl rand -hex 32`) |
-| `PUBLIC_HOST` | `muchhad-quiz-xxxx.onrender.com` (fill after deploy) |
+| `PUBLIC_HOST` | `Muchhad-Quiz-xxxx.onrender.com` (fill after deploy) |
 
 ### 3. Create PostgreSQL Database (Free 90 days)
 
@@ -86,7 +86,7 @@ In **Environment** tab, add:
 
 ### 6. Update PUBLIC_HOST
 
-1. After deploy: **Web Service** → **Settings** → Copy **URL** (e.g., `https://muchhad-quiz-abc123.onrender.com`)
+1. After deploy: **Web Service** → **Settings** → Copy **URL** (e.g., `https://Muchhad-Quiz-abc123.onrender.com`)
 2. **Environment** → Edit `PUBLIC_HOST` → Paste URL
 3. **Save** → Redeploys with correct join URLs
 
