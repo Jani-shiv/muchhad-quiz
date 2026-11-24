@@ -1,5 +1,5 @@
 # Build Frontend
-FROM node:20-alpine AS frontend-builder
+FROM node:26-alpine AS frontend-builder
 WORKDIR /app/frontend
 COPY frontend/package*.json ./
 RUN npm ci
@@ -7,7 +7,7 @@ COPY frontend/ ./
 RUN node node_modules/vite/bin/vite.js build
 
 # Production Backend
-FROM node:20-alpine AS backend
+FROM node:26-alpine AS backend
 WORKDIR /app/backend
 COPY backend/package*.json ./
 RUN npm ci --omit=dev
